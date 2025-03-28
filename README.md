@@ -121,4 +121,53 @@ The platform adopts a high-level cloud computing architecture addressing **load 
 
 #### Security and Data Protection  
 - Data encryption through **SSL/TLS** for secure communication.  
-- Continuous monitoring by **AWS CloudWatch** for proactive detection and mitigation of issues.  
+- Continuous monitoring by **AWS CloudWatch** for proactive detection and mitigation of issues.
+
+## 4. Intelligence Models and Components  
+
+The Intelligent Service Cloud Platform integrates **AI and ML models** to enhance autonomous vehicle safety, fleet performance, and data-driven decision-making. 
+
+### 4.1 Intelligence Models (To Be Integrated)  
+
+#### 4.1.1 Object Detection and Classification Model  
+- **Model:** YOLO (You Only Look Once) Convolutional Neural Network (CNN).  
+- **Purpose:** Real-time detection and classification of objects (vehicles, pedestrians, obstacles).  
+- **Justification:** Low latency, high accuracy, and compatibility with CARLA simulation.  
+
+#### 4.1.2 Predictive Maintenance and Anomaly Detection  
+- **Model:** LSTM (Long Short-Term Memory) Recurrent Neural Network.  
+- **Purpose:** Predict potential component failures using telemetry data.  
+- **Justification:** Effective for sequential time-series data analysis and proactive anomaly detection.  
+
+
+#### 4.1.3 AI-driven Path Planning and Navigation  
+- **Model:** Deep Reinforcement Learning (Deep Q-Network - DQN).  
+- **Purpose:** Dynamic route optimization based on environmental conditions.  
+- **Justification:** Continuous learning through real-time feedback in simulated environments.  
+
+### 4.2 Intelligence Components (To Be Integrated)  
+
+#### 4.2.1 Real-Time Object Detection & Collision Avoidance Component  
+- Uses YOLO CNN for detecting obstacles and generating real-time alerts.  
+- Integrated within CARLA Simulator for testing safety scenarios.  
+
+#### 4.2.2 Predictive Maintenance Engine  
+- Utilizes LSTM networks for analyzing telemetry data (e.g., LIDAR, GPS, battery status).  
+- Sends prioritized alerts for maintenance requirements to reduce downtime.  
+
+#### 4.2.3 Navigation & Mobility Optimization Module  
+- Incorporates DQN for adaptive path planning.  
+- Adjusts routes based on traffic, weather, and real-time sensor inputs.  
+
+## 5. References  
+
+1. [CARLA Simulator](https://carla.org/)  
+2. [System Development Guide](https://www.ogcio.gov.hk/en/infrastructure/methodology/system_development/doc/G61c_Effective_SAnD_Guide_Appendix_C_v1_1.pdf)  
+3. [Engineering on the Internet for Global Software Production](https://www.researchgate.net/publication/2955094_Engineering_on_the_Internet_for_global_software_production)  
+4. [Smart Mobile Service System for Illegal Dumping Detection](https://www.researchgate.net/publication/316888159_An_Edge-Based_Smart_Mobile_Service_System_for_Illegal_Dumping_Detection_and_Monitoring_in_San_Jose)  
+5. [IEEE Document on Smart Platforms](https://ieeexplore.ieee.org/document/8397575)  
+6. [AI-Based Surveillance Drone Cloud Platform](https://www.researchgate.net/publication/381554908_Building_an_AI-Based_Surveillance_Drone_Cloud_Platform)  
+
+---
+
+
