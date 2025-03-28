@@ -30,7 +30,6 @@ Autonomous shipping trucks represent an emerging technology that promises greate
 - Validated System through Simulation: Thorough testing in the CARLA environment to ensure real-world readiness and robustness of AI components.
 
 ## 2. System Requirements and Analysis  
-
 ### 2.1 Product Perspective  
 
 The Intelligent Service Cloud Platform for Autonomous Shipping Trucks is designed as a comprehensive standalone solution, replacing fragmented fleet management systems traditionally used for truck monitoring, maintenance scheduling, and route planning. The platform is cloud-based, utilizing Amazon Web Services (AWS) infrastructure to enable real-time truck monitoring, intelligent predictive maintenance, efficient route optimization, and robust simulation capabilities via the CARLA Simulator.  
@@ -70,7 +69,6 @@ The system provides the following high-level functions:
 - Edge Devices: Local processing before cloud transfer.
   
 ## 3. System Infrastructure and Architecture  
-
 ### 3.1 Overview of Cloud-Based Infrastructure  
 
 The Intelligent Service Cloud Platform for Autonomous Shipping Trucks is deployed entirely on **Amazon Web Services (AWS)**, designed to maximize availability, scalability, and real-time performance. The cloud infrastructure facilitates communication between autonomous trucks, the simulation environment, and user groups.  
@@ -91,8 +89,6 @@ The Intelligent Service Cloud Platform for Autonomous Shipping Trucks is deploye
 - Auto Scaling ensures optimal performance during high traffic by dynamically provisioning additional EC2 resources.  
 - Secure communication through **AWS Virtual Private Cloud (VPC)**, SSL/TLS, and secure VPN tunnels.  
 
----
-
 ### 3.2 System Component-Oriented Function Architecture Design  
 
 The architecture is structured for **efficient fleet management, real-time operations, predictive analytics, and scenario simulations**. The architecture emphasizes clear, manageable inter-component communication, ensuring data consistency and low latency.  
@@ -106,8 +102,6 @@ The architecture is structured for **efficient fleet management, real-time opera
 #### Low-Level Technical Components  
 - **Backend Microservices:** RESTful APIs, WebSockets, and telemetry data ingestion.  
 - **Data Storage Layer:** Structured (SQL) and unstructured (NoSQL) data management.  
-
----
 
 ### 3.3 High-Level Cloud Computing Design  
 
@@ -128,5 +122,3 @@ The platform adopts a high-level cloud computing architecture addressing **load 
 #### Security and Data Protection  
 - Data encryption through **SSL/TLS** for secure communication.  
 - Continuous monitoring by **AWS CloudWatch** for proactive detection and mitigation of issues.  
-
----
