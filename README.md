@@ -67,5 +67,66 @@ The system provides the following high-level functions:
 
 **Hardware Interfaces:**  
 - Truck Sensor Modules: Real or simulated devices sending telemetry over MQTT/REST.  
-- Edge Devices: Local processing before cloud transfer.  
+- Edge Devices: Local processing before cloud transfer.
+  
+## 3. System Infrastructure and Architecture  
 
+### 3.1 Overview of Cloud-Based Infrastructure  
+
+The Intelligent Service Cloud Platform for Autonomous Shipping Trucks is deployed entirely on **Amazon Web Services (AWS)**, designed to maximize availability, scalability, and real-time performance. The cloud infrastructure facilitates communication between autonomous trucks, the simulation environment, and user groups.  
+
+#### Cloud Systems and Server Infrastructure  
+- **Compute Resources:** AWS Elastic Compute Cloud (EC2) with Auto Scaling groups for dynamic adjustment of compute capacity.  
+- **Load Balancing:** Elastic Load Balancer (ELB) distributes requests efficiently across EC2 instances.  
+- **Communication Management:** AWS API Gateway manages secure, RESTful API communication.  
+- **Telemetry Data Handling:** Uses WebSocket and MQTT protocols for real-time communication.  
+- **System Monitoring:** AWS CloudWatch tracks system performance, utilization, and anomalies.  
+
+#### Data Storage and Database Management  
+- **Relational Databases (AWS RDS):** Structured data management for user accounts, service requests, and maintenance logs.  
+- **NoSQL Databases (AWS DynamoDB / MongoDB):** Manages telemetry sensor readings, GPS data, and video feeds.  
+- **AWS S3:** Storage for static assets, logs, and simulation data.  
+
+#### Load Balancing and Networking Connectivity  
+- Auto Scaling ensures optimal performance during high traffic by dynamically provisioning additional EC2 resources.  
+- Secure communication through **AWS Virtual Private Cloud (VPC)**, SSL/TLS, and secure VPN tunnels.  
+
+---
+
+### 3.2 System Component-Oriented Function Architecture Design  
+
+The architecture is structured for **efficient fleet management, real-time operations, predictive analytics, and scenario simulations**. The architecture emphasizes clear, manageable inter-component communication, ensuring data consistency and low latency.  
+
+#### High-Level Functional Components  
+- **Simulator Management:** Manages autonomous driving scenarios and provides scenario analysis.  
+- **Fleet Operations & Monitoring:** Real-time GPS & sensor tracking, predictive maintenance, anomaly detection.  
+- **Route & Alert Management:** Dynamic route optimization, incident handling, and emergency alerts.  
+- **System Dashboard & User Interface:** Visual monitoring, role management, and user interaction.  
+
+#### Low-Level Technical Components  
+- **Backend Microservices:** RESTful APIs, WebSockets, and telemetry data ingestion.  
+- **Data Storage Layer:** Structured (SQL) and unstructured (NoSQL) data management.  
+
+---
+
+### 3.3 High-Level Cloud Computing Design  
+
+The platform adopts a high-level cloud computing architecture addressing **load balancing, scalability, and multi-tenancy**.  
+
+#### Load Balancing  
+- Managed by **AWS Elastic Load Balancers (ELB)** to distribute traffic across EC2 instances.  
+- Periodic health checks ensure traffic is redirected from failing servers, maintaining system reliability.  
+
+#### Scalability and Performance  
+- Achieved through **AWS Auto Scaling Groups**, dynamically adjusting resources based on demand.  
+- Enhances performance for handling high-volume real-time data streams.  
+
+#### Multi-Tenancy  
+- **Role-Based Access Control (RBAC):** Managed by AWS Identity and Access Management (IAM).  
+- Provides isolated virtual environments within **AWS VPC** for data segregation and resource isolation.  
+
+#### Security and Data Protection  
+- Data encryption through **SSL/TLS** for secure communication.  
+- Continuous monitoring by **AWS CloudWatch** for proactive detection and mitigation of issues.  
+
+---
