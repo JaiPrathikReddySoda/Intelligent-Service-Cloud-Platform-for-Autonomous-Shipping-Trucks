@@ -1,173 +1,73 @@
-# Intelligent Service Cloud Platform for Autonomous Shipping Trucks  
----
+# Welcome to your Lovable project
 
-## 1. Introduction  
+## Project info
 
-Autonomous shipping trucks represent an emerging technology that promises greater efficiency and cost-effectiveness in the logistics and transportation industry. However, leveraging the full potential of these vehicles requires a robust, cloud-based solution for managing real-time data, scheduling, and intelligent analytics. This document proposes an Intelligent Service Cloud Platform for autonomous shipping trucks, which combines scalable cloud architecture (AWS), AI-driven insights (object detection, predictive maintenance), and simulator-based testing (CARLA) into one cohesive system.  
+**URL**: https://lovable.dev/projects/a5292732-8d3e-4519-9c51-d51c81ace127
 
-### 1.1 Objective  
+## How can I edit this code?
 
-1. **Real-Time Tracking & Monitoring:**  
-   - Provide continuous updates on vehicle location, speed, and sensor data, enabling stakeholders to make informed decisions.  
+There are several ways of editing your application.
 
-2. **Scalable Cloud Infrastructure:**  
-   - Employ AWS to ensure the platform can handle multiple trucks simultaneously, offering high availability and fault tolerance.  
+**Use Lovable**
 
-3. **AI-Driven Analytics:**  
-   - Integrate computer vision models (e.g., YOLO or Faster R-CNN) for obstacle detection and incorporate predictive maintenance algorithms to detect anomalies in truck operations.  
+Simply visit the [Lovable Project](https://lovable.dev/projects/a5292732-8d3e-4519-9c51-d51c81ace127) and start prompting.
 
-4. **Simulator Integration:**  
-   - Leverage CARLA or a comparable platform to test and validate both hardware and software under realistic driving conditions.  
+Changes made via Lovable will be committed automatically to this repo.
 
-5. **User-Centric Dashboards:**  
-   - Offer an intuitive UI for various user roles (truck owners, dispatch staff, cloud admins) with real-time alerts, route planning, and system performance metrics.  
+**Use your preferred IDE**
 
-### 1.2 Expected Outcomes  
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-- Efficient Fleet Management: Improved delivery speed and reduced operational costs through optimal route planning and minimal downtime.  
-- Improved Safety & Reliability: Enhanced safety through early anomaly detection and object recognition.  
-- Scalable Multi-Truck Handling: Efficient handling of numerous trucks (real or simulated) without performance bottlenecks, supported by load-balancing and auto-scaling strategies.  
-- Validated System through Simulation: Thorough testing in the CARLA environment to ensure real-world readiness and robustness of AI components.
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-## 2. System Requirements and Analysis  
-### 2.1 Product Perspective  
+Follow these steps:
 
-The Intelligent Service Cloud Platform for Autonomous Shipping Trucks is designed as a comprehensive standalone solution, replacing fragmented fleet management systems traditionally used for truck monitoring, maintenance scheduling, and route planning. The platform is cloud-based, utilizing Amazon Web Services (AWS) infrastructure to enable real-time truck monitoring, intelligent predictive maintenance, efficient route optimization, and robust simulation capabilities via the CARLA Simulator.  
-It seamlessly integrates with:  
-- External IoT sensors on autonomous trucks  
-- Real-time GPS and sensor data feeds  
-- External APIs (weather, traffic)  
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-### 2.2 Product Functions  
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-The system provides the following high-level functions:  
-- **Truck Monitoring & Tracking:** Real-time GPS tracking, telemetry monitoring, sensor data analysis, and video streaming.  
-- **Predictive Maintenance:** Analysis of sensor and telemetry data to predict mechanical issues and enable proactive maintenance.  
-- **Route Optimization & Scheduling:** Dynamic routing based on real-time conditions, weather, traffic data, and truck availability.  
-- **Real-Time Object Detection & Safety Alerts:** Integration of AI models for object detection and real-time safety alerts.  
-- **Simulation & Scenario Testing (CARLA Simulator):** Scenario-based testing to assess performance and ensure safety.  
-- **Dashboard & User Management:** Real-time monitoring, alerts handling, user administration, and scenario management.  
+# Step 3: Install the necessary dependencies.
+npm i
 
-### 2.3 User Classes and Characteristics  
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
 
-- **Truck Owners:** Oversee assigned trucks, check status/telemetry, and receive alerts on urgent maintenance.  
-- **Dispatch Personnel (Logistics):** Plan and schedule delivery routes, monitor fleet movement, and handle service incidents.  
-- **Cloud Administrators:** Manage platform infrastructure, user roles, scaling policies, and AI model integration.  
+**Edit a file directly in GitHub**
 
-### 2.4 Interface Requirements  
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-**User Interfaces:**  
-- Web Portal/Dashboard: Provides role-specific views (owner vs. dispatcher vs. admin).  
-- Mobile-Friendly UI: Ensures on-the-go monitoring and updates.  
+**Use GitHub Codespaces**
 
-**Software Interfaces:**  
-- CARLA Simulator API: Manages simulated trucks and environment parameters.  
-- External Traffic/Weather Feeds (if integrated): Provides data for route optimization and hazard warnings.  
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-**Hardware Interfaces:**  
-- Truck Sensor Modules: Real or simulated devices sending telemetry over MQTT/REST.  
-- Edge Devices: Local processing before cloud transfer.
-  
-## 3. System Infrastructure and Architecture  
-### 3.1 Overview of Cloud-Based Infrastructure  
+## What technologies are used for this project?
 
-The Intelligent Service Cloud Platform for Autonomous Shipping Trucks is deployed entirely on **Amazon Web Services (AWS)**, designed to maximize availability, scalability, and real-time performance. The cloud infrastructure facilitates communication between autonomous trucks, the simulation environment, and user groups.  
+This project is built with:
 
-#### Cloud Systems and Server Infrastructure  
-- **Compute Resources:** AWS Elastic Compute Cloud (EC2) with Auto Scaling groups for dynamic adjustment of compute capacity.  
-- **Load Balancing:** Elastic Load Balancer (ELB) distributes requests efficiently across EC2 instances.  
-- **Communication Management:** AWS API Gateway manages secure, RESTful API communication.  
-- **Telemetry Data Handling:** Uses WebSocket and MQTT protocols for real-time communication.  
-- **System Monitoring:** AWS CloudWatch tracks system performance, utilization, and anomalies.  
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-#### Data Storage and Database Management  
-- **Relational Databases (AWS RDS):** Structured data management for user accounts, service requests, and maintenance logs.  
-- **NoSQL Databases (AWS DynamoDB / MongoDB):** Manages telemetry sensor readings, GPS data, and video feeds.  
-- **AWS S3:** Storage for static assets, logs, and simulation data.  
+## How can I deploy this project?
 
-#### Load Balancing and Networking Connectivity  
-- Auto Scaling ensures optimal performance during high traffic by dynamically provisioning additional EC2 resources.  
-- Secure communication through **AWS Virtual Private Cloud (VPC)**, SSL/TLS, and secure VPN tunnels.  
+Simply open [Lovable](https://lovable.dev/projects/a5292732-8d3e-4519-9c51-d51c81ace127) and click on Share -> Publish.
 
-### 3.2 System Component-Oriented Function Architecture Design  
+## Can I connect a custom domain to my Lovable project?
 
-The architecture is structured for **efficient fleet management, real-time operations, predictive analytics, and scenario simulations**. The architecture emphasizes clear, manageable inter-component communication, ensuring data consistency and low latency.  
+Yes, you can!
 
-#### High-Level Functional Components  
-- **Simulator Management:** Manages autonomous driving scenarios and provides scenario analysis.  
-- **Fleet Operations & Monitoring:** Real-time GPS & sensor tracking, predictive maintenance, anomaly detection.  
-- **Route & Alert Management:** Dynamic route optimization, incident handling, and emergency alerts.  
-- **System Dashboard & User Interface:** Visual monitoring, role management, and user interaction.  
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-#### Low-Level Technical Components  
-- **Backend Microservices:** RESTful APIs, WebSockets, and telemetry data ingestion.  
-- **Data Storage Layer:** Structured (SQL) and unstructured (NoSQL) data management.  
-
-### 3.3 High-Level Cloud Computing Design  
-
-The platform adopts a high-level cloud computing architecture addressing **load balancing, scalability, and multi-tenancy**.  
-
-#### Load Balancing  
-- Managed by **AWS Elastic Load Balancers (ELB)** to distribute traffic across EC2 instances.  
-- Periodic health checks ensure traffic is redirected from failing servers, maintaining system reliability.  
-
-#### Scalability and Performance  
-- Achieved through **AWS Auto Scaling Groups**, dynamically adjusting resources based on demand.  
-- Enhances performance for handling high-volume real-time data streams.  
-
-#### Multi-Tenancy  
-- **Role-Based Access Control (RBAC):** Managed by AWS Identity and Access Management (IAM).  
-- Provides isolated virtual environments within **AWS VPC** for data segregation and resource isolation.  
-
-#### Security and Data Protection  
-- Data encryption through **SSL/TLS** for secure communication.  
-- Continuous monitoring by **AWS CloudWatch** for proactive detection and mitigation of issues.
-
-## 4. Intelligence Models and Components  
-
-The Intelligent Service Cloud Platform integrates **AI and ML models** to enhance autonomous vehicle safety, fleet performance, and data-driven decision-making. 
-
-### 4.1 Intelligence Models (To Be Integrated)  
-
-#### 4.1.1 Object Detection and Classification Model  
-- **Model:** YOLO (You Only Look Once) Convolutional Neural Network (CNN).  
-- **Purpose:** Real-time detection and classification of objects (vehicles, pedestrians, obstacles).  
-- **Justification:** Low latency, high accuracy, and compatibility with CARLA simulation.  
-
-#### 4.1.2 Predictive Maintenance and Anomaly Detection  
-- **Model:** LSTM (Long Short-Term Memory) Recurrent Neural Network.  
-- **Purpose:** Predict potential component failures using telemetry data.  
-- **Justification:** Effective for sequential time-series data analysis and proactive anomaly detection.  
-
-
-#### 4.1.3 AI-driven Path Planning and Navigation  
-- **Model:** Deep Reinforcement Learning (Deep Q-Network - DQN).  
-- **Purpose:** Dynamic route optimization based on environmental conditions.  
-- **Justification:** Continuous learning through real-time feedback in simulated environments.  
-
-### 4.2 Intelligence Components (To Be Integrated)  
-
-#### 4.2.1 Real-Time Object Detection & Collision Avoidance Component  
-- Uses YOLO CNN for detecting obstacles and generating real-time alerts.  
-- Integrated within CARLA Simulator for testing safety scenarios.  
-
-#### 4.2.2 Predictive Maintenance Engine  
-- Utilizes LSTM networks for analyzing telemetry data (e.g., LIDAR, GPS, battery status).  
-- Sends prioritized alerts for maintenance requirements to reduce downtime.  
-
-#### 4.2.3 Navigation & Mobility Optimization Module  
-- Incorporates DQN for adaptive path planning.  
-- Adjusts routes based on traffic, weather, and real-time sensor inputs.  
-
-## 5. References  
-
-1. [CARLA Simulator](https://carla.org/)  
-2. [System Development Guide](https://www.ogcio.gov.hk/en/infrastructure/methodology/system_development/doc/G61c_Effective_SAnD_Guide_Appendix_C_v1_1.pdf)  
-3. [Engineering on the Internet for Global Software Production](https://www.researchgate.net/publication/2955094_Engineering_on_the_Internet_for_global_software_production)  
-4. [Smart Mobile Service System for Illegal Dumping Detection](https://www.researchgate.net/publication/316888159_An_Edge-Based_Smart_Mobile_Service_System_for_Illegal_Dumping_Detection_and_Monitoring_in_San_Jose)  
-5. [IEEE Document on Smart Platforms](https://ieeexplore.ieee.org/document/8397575)  
-6. [AI-Based Surveillance Drone Cloud Platform](https://www.researchgate.net/publication/381554908_Building_an_AI-Based_Surveillance_Drone_Cloud_Platform)  
-
----
-
-
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
