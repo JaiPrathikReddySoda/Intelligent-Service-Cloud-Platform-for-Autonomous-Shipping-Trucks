@@ -1,73 +1,50 @@
-# Welcome to your Lovable project
+# Smart Autonomous Truck Management Platform
 
-## Project info
+A full-stack, AI-powered platform to manage and simulate autonomous shipping trucks. This system provides real-time fleet tracking, delivery and maintenance scheduling, live CARLA-based simulations, and intelligent object detection using YOLO.
 
-**URL**: https://lovable.dev/projects/a5292732-8d3e-4519-9c51-d51c81ace127
+Built with a modular microservices architecture and deployed on AWS, the platform bridges real-world fleet logistics with simulation and machine learning, providing a powerful tool for both operators and researchers.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+**Frontend:**
+- React.js (TypeScript)
+- Leaflet.js for map interactions
+- WebSockets / MJPEG for live updates
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a5292732-8d3e-4519-9c51-d51c81ace127) and start prompting.
+**Backend:**
+- Flask (Python REST APIs)
+- MongoDB Atlas (NoSQL DB)
+- CARLA Simulator for virtual trucks
+- YOLOv5 for object detection
+- Docker, AWS EC2, Auto Scaling
 
-Changes made via Lovable will be committed automatically to this repo.
+**DevOps:**
+- AWS (EC2, VPC, ALB, NAT Gateway)
+- Docker + Elastic Container Registry (ECR)
+- CloudWatch for monitoring
+- JWT for authentication, bcrypt for secure passwords
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 How to Run the Project
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/smart-truck-platform.git
+cd smart-truck-platform
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 2. Run the Project
+npm install
 npm run dev
-```
+Make sure .env.production or .env exists with API base URL:VITE_API_BASE_URL=http://localhost:
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/a5292732-8d3e-4519-9c51-d51c81ace127) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+RUN BACKEND
+cd backend
+pip install -r requirements.txt   # install dependencies
+python app.py                     # run Flask API
+Ensure you have a .env file inside /backend with:
+MONGO_URI=your_mongodb_connection_string
+SECRET_KEY=your_secret
+PORT=5011
