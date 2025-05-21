@@ -29,13 +29,9 @@ Built with a modular microservices architecture and deployed on AWS, the platfor
 ---
 
 ## 🚀 How to Run the Project
-
-### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/smart-truck-platform.git
 cd smart-truck-platform
-
-### 2. Run the Project
 npm install
 npm run dev
 Make sure .env.production or .env exists with API base URL:VITE_API_BASE_URL=http://localhost:
